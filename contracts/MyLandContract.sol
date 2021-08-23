@@ -1,4 +1,4 @@
-pragma solidity ^0.8.7;
+pragma solidity ^0.5.11;
 contract MyLandContract
 {
     struct Land
