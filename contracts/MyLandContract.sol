@@ -21,7 +21,7 @@ contract MyLandContract
     //one account can hold many lands (many landTokens, each token one land)
     mapping (address => Land[]) public _ownedLands;
 
-    function addLand(address propertyOwner, string memory _location, uint _cost) public returns (unit)
+    function addLand(address propertyOwner, string memory _location, uint _cost) public returns (uint)
     {
         totalLandsCounter = totalLandsCounter + 1;
 
@@ -37,4 +37,17 @@ contract MyLandContract
         emit Add(propertyOwner, totalLandsCounter);
         return totalLandsCounter;
     }
+    //GET TOTAL NO OF LANDS OWNED BY AN ACCOUNT
+    function getNoOfLands(address_landHolder) view public returns(uint)
+    {
+        uint index;
+        index = __ownedLands[_landHolder].length;
+        return index;
+    }
+    //Get total lands counter
+    function getTotalLandCounter() public view returns (uint)
+    {
+    return totalLandsCounter;
+    }
+
 }
