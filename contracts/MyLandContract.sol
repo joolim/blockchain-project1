@@ -1,4 +1,4 @@
-pragma solidity ^0.5.11;
+pragma solidity ^0.8.7;
 contract MyLandContract
 {
     struct Land
@@ -38,10 +38,10 @@ contract MyLandContract
         return totalLandsCounter;
     }
     //GET TOTAL NO OF LANDS OWNED BY AN ACCOUNT
-    function getNoOfLands(address_landHolder) view public returns(uint)
+    function getNoOfLands(address _landHolder) view public returns(uint)
     {
         uint index;
-        index = __ownedLands[_landHolder].length;
+        index = _ownedLands[_landHolder].length;
         return index;
     }
     //Get total lands counter
